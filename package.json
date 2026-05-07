@@ -1,0 +1,30 @@
+{
+  "name": "project_hashmap",
+  "version": "1.0.0",
+  "description": "Hash Map implementation in JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noOdin1/project_HashMap.git"
+  },
+  "keywords": [
+    "Hash",
+    "Map",
+    "Hash",
+    "functions",
+    "linked",
+    "list"
+  ],
+  "author": "noOdin1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noOdin1/project_HashMap/issues"
+  },
+  "homepage": "https://github.com/noOdin1/project_HashMap#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
