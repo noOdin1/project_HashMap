@@ -1,2 +1,3 @@
 /* hash_map.test.js */
-import { HashMap } from "./hash_msap.js";
+import { HashMap } from "./hash_map.js";
+
