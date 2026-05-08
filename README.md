@@ -16,3 +16,7 @@ This project will implement another common data structure, Hash Map.<br>
 | 6. function has(key) returns true or false, whether that key is on<br>&emsp;the hash map.                                     | [in progress] :hourglass_flowing_sand: |
 | 7. function remove(key) takes the key and removes the matching key on<br>&emsp;the hash map.                                  | [in progress] :hourglass_flowing_sand: |
 | 8. function length() returns the total number of entries in<br>&emsp;the hash map.                                            | [in progress] :hourglass_flowing_sand: |
+| 9. function clear() removes all entries in the Hash Map<br>&emsp;                                                             | [in progress] :hourglass_flowing_sand: |
+| 10. function keys() returns an array with all the keys<br>&emsp;&ensp;on the hash map.                                        | [in progress] :hourglass_flowing_sand: |
+| 11. function values() returns an array with all the values<br>&emsp;&ensp;on the hash map.                                    | [in progress] :hourglass_flowing_sand: |
+| 12. function entries() returns an array with all the<br>&emsp;&ensp;[key, values] pair on the hash map.                       | [in progress] :hourglass_flowing_sand: |
