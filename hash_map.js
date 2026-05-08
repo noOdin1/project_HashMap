@@ -26,6 +26,28 @@ class HashMap {
 
     return hashCode;
   }
+
+  /* Function to get the value corresponding to the key */
+  get(key) {
+    let hashkey = this.hash(key);
+    console.log(
+      "The size of nodes in this bucket is: " + this.list[hashkey].size(),
+    );
+    if (!(this.list[hashkey].size() > 0)) {
+      return undefined;
+    }
+    let tmpLinkedList = this.list[hashkey];
+    for (let i = 1; i <= tmpLinkedList.size(); i++) {
+      if (tmpLinkedList.valueAt(i)[0] === key) {
+        return tmpLinkedList.valueAt(i)[1];
+      }
+    }
+    // This statement is used when a 'key' is hashed
+    // and points to a bucket, but the 'key' is not matched
+    // with any of the items in the bucket.
+    return null;
+  }
+
 }
 
 export { HashMap };
