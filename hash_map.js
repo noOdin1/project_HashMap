@@ -12,6 +12,20 @@ class HashMap {
     );
   }
 
+
+  /* Function to produce a hash for the key supplied */
+  hash(key) {
+    let hashCode = 0;
+
+    const primeNumber = 37;
+    for (let i = 0; i < key.length; i++) {
+      hashCode = (key.charCodeAt(i) / Math.PI) * primeNumber + hashCode;
+    }
+    // hashCode = Math.floor(hashCode / primeNumber);
+    hashCode = Math.floor((hashCode %= this.capacity));
+
+    return hashCode;
+  }
 }
 
 export { HashMap };
