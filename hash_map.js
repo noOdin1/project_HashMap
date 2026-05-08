@@ -48,6 +48,24 @@ class HashMap {
     return null;
   }
 
+  /* Function to check if the hash map contains the key */
+  has(key) {
+    let hashkey = this.hash(key);
+    console.log(
+      "The size of nodes in this bucket is: " + this.list[hashkey].size(),
+    );
+    if (!(this.list[hashkey].size() > 0)) {
+      return false;
+    }
+    let tmpLinkedList = this.list[hashkey];
+    for (let i = 1; i <= tmpLinkedList.size(); i++) {
+      if (tmpLinkedList.valueAt(i)[0] === key) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 }
 
 export { HashMap };
