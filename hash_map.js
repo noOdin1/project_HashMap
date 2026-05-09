@@ -74,6 +74,11 @@ class HashMap {
     return this.get(key) === null ? false : true;
   }
 
+  /**
+   * Function to remove the [key,value] pair on the hash map.
+   * Returns true if key is found and removed, false otherwise.
+   **/
+  remove(key) {
     let hashkey = this.hash(key);
     if (!(this.list[hashkey].size() > 0)) {
       return false;
@@ -81,9 +86,13 @@ class HashMap {
     let tmpLinkedList = this.list[hashkey];
     for (let i = 1; i <= tmpLinkedList.size(); i++) {
       if (tmpLinkedList.valueAt(i)[0] === key) {
+        tmpLinkedList.removeAt(i);
         return true;
       }
     }
+    // This statement is used when a 'key' is hashed
+    // and points to a bucket, but the 'key' is not matched
+    // with any of the items in the bucket.
     return false;
   }
 
