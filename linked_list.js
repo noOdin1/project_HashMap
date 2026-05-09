@@ -54,14 +54,18 @@ class LinkedList {
     for (let i = 1; i < index; i++) {
       tmpNode = tmpNode.nextNode;
     }
-    // console.log("linked list, tmpNode: " + typeof tmpNode.val);
-    // console.log(
-    //   "tmpNode.val[0]: " +
-    //     tmpNode.val[0] +
-    //     ", tmpNode.val[1]: " +
-    //     tmpNode.val[1],
-    // );
     return tmpNode.val;
+  }
+
+  changeValueAt(index, value) {
+    if (index == 0 || index > this.totalNodes) {
+      return undefined;
+    }
+    let tmpNode = this.headNode;
+    for (let i = 1; i < index; i++) {
+      tmpNode = tmpNode.nextNode;
+    }
+    tmpNode.val = value;
   }
 
   pop() {
@@ -171,11 +175,14 @@ class LinkedList {
     if (this.totalNodes < index || index < 1) {
       throw RangeError("Index out of range");
     }
-    let prevNode;
+    let prevNode = null;
     let tmpNode = this.headNode;
     for (let i = 1; i < index; i++) {
       prevNode = tmpNode;
       tmpNode = tmpNode.nextNode;
+    }
+    if (prevNode == null) {
+      return this.pop();
     }
     if (prevNode !== null && prevNode !== undefined)
       prevNode.nextNode = tmpNode.nextNode;
