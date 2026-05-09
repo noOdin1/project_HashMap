@@ -55,7 +55,7 @@ class HashMap {
   get(key) {
     let hashkey = this.hash(key);
     if (!(this.list[hashkey].size() > 0)) {
-      return undefined;
+      return null;
     }
     let tmpLinkedList = this.list[hashkey];
     for (let i = 1; i <= tmpLinkedList.size(); i++) {
