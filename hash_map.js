@@ -96,6 +96,13 @@ class HashMap {
     return false;
   }
 
+  /* Function to remove all entries on the hash */
+  clear() {
+    this.list = Array.from({ length: this.capacity }, (_, i) => i).map(
+      () => new LinkedList(),
+    );
+  }
+
 }
 
 export { HashMap };
