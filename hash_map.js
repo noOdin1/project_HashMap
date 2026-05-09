@@ -26,6 +26,31 @@ class HashMap {
     return hashCode;
   }
 
+  /**
+   * Function to store the [key, value] pair on the hash map
+   * Although not specified, this function will call hash()
+   * function to create a hash entry.
+   **/
+  set(key, value) {
+    let hashkey = this.hash(key);
+    let entry = [key, value];
+
+    /* this would only trigger if the key exists */
+    if (this.has(key)) {
+      // update the key
+      let tmpLinkedList = this.list[hashkey];
+      for (let i = 1; i <= tmpLinkedList.size(); i++) {
+        if (tmpLinkedList.valueAt(i)[0] === key) {
+          tmpLinkedList.changeValueAt(i, entry);
+        }
+      }
+    } else {
+      /* This part executes if the key does not exists */
+      this.list[hashkey].append(entry);
+      this.keyCount++;
+    }
+  }
+
   /* Function to get the value corresponding to the key */
   get(key) {
     let hashkey = this.hash(key);
