@@ -121,6 +121,20 @@ class HashMap {
     return tmpArr;
   }
 
+  /* Function to return an arrray of all keys on the hash */
+  keys() {
+    return this.search("keys");
+  }
+
+  /* Function to return an arrray of all values from the key value pair */
+  values() {
+    return this.search("values");
+  }
+
+  /* Function to return an arrray of all key, value pair on the hash map */
+  entries() {
+    return this.search("entries");
+  }
 }
 
 export { HashMap };
