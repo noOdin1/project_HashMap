@@ -95,6 +95,13 @@ class HashMap {
     // with any of the items in the bucket.
     return false;
   }
+  /**
+   * Function to return the number of keys stored in the
+   *  hash map
+   **/
+  length() {
+    return this.keyCount;
+  }
 
   /* Function to remove all entries on the hash */
   clear() {
