@@ -26,6 +26,17 @@ class HashMap {
     return hashCode;
   }
 
+
+  /**
+   * The definition for capacity here is the amount of 'bucket' with
+   * at least 1 item over overall number of 'bucket'.
+   */
+  testCapacity() {
+    let count = 0;
+    this.list.forEach((x) => (x.size() == 0 ? 0 : count++));
+    return count / this.capacity;
+  }
+
   /**
    * Function to store the [key, value] pair on the hash map
    * Although not specified, this function will call hash()
