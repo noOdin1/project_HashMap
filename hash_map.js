@@ -103,6 +103,24 @@ class HashMap {
     );
   }
 
+  /* Function to search the list */
+  search(criteria) {
+    let tmpArr = [];
+    /* This loop contains another loop which would not scale properly */
+    this.list.forEach((x) => {
+      if (x.size() != 0) {
+        for (let i = 1; i <= x.size(); i++) {
+          criteria === "keys"
+            ? tmpArr.push(x.valueAt(i)[0])
+            : criteria === "values"
+              ? tmpArr.push(x.valueAt(i)[1])
+              : tmpArr.push(x.valueAt(i));
+        }
+      }
+    });
+    return tmpArr;
+  }
+
 }
 
 export { HashMap };
