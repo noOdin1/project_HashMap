@@ -71,6 +71,9 @@ class HashMap {
 
   /* Function to check if the hash map contains the key */
   has(key) {
+    return this.get(key) === null ? false : true;
+  }
+
     let hashkey = this.hash(key);
     if (!(this.list[hashkey].size() > 0)) {
       return false;
