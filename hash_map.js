@@ -12,7 +12,6 @@ class HashMap {
     );
   }
 
-
   /* Function to produce a hash for the key supplied */
   hash(key) {
     let hashCode = 0;
@@ -30,9 +29,6 @@ class HashMap {
   /* Function to get the value corresponding to the key */
   get(key) {
     let hashkey = this.hash(key);
-    console.log(
-      "The size of nodes in this bucket is: " + this.list[hashkey].size(),
-    );
     if (!(this.list[hashkey].size() > 0)) {
       return undefined;
     }
@@ -51,9 +47,6 @@ class HashMap {
   /* Function to check if the hash map contains the key */
   has(key) {
     let hashkey = this.hash(key);
-    console.log(
-      "The size of nodes in this bucket is: " + this.list[hashkey].size(),
-    );
     if (!(this.list[hashkey].size() > 0)) {
       return false;
     }
