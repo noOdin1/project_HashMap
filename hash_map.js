@@ -72,6 +72,7 @@ class HashMap {
       if (this.currentCapacity() + 1 / this.capacity > this.loadFactor) {
         this.expandList();
       }
+
       /* This part executes if the key does not exists */
       this.list[hashkey].append(entry);
       this.keyCount++;
