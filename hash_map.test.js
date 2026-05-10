@@ -266,4 +266,20 @@ describe("Hash Map test: 2 item on the list", () => {
       ["banana", "yellow"],
     ]);
   });
+
+  test("Test to see if Hash Map will expand when load capacity exceeds 0.75", () => {
+    // hashmap.set("appple", "red");
+    // hashmap.set("banana", "yellow");
+    hashmap.set("carrot", "orange");
+    hashmap.set("dog", "brown");
+    hashmap.set("elephant", "gray");
+    hashmap.set("frog", "green");
+    hashmap.set("grape", "purple");
+    hashmap.set("hat", "black");
+    hashmap.set("ice cream", "white");
+    hashmap.set("jacket", "blue");
+    hashmap.set("kite", "pink");
+    hashmap.set("lion", "golden");
+    hashmap.set("phone", "black");
+    hashmap.set("coffee", "white");
 });
