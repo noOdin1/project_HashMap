@@ -26,6 +26,18 @@ class HashMap {
     return hashCode;
   }
 
+  // This is part of the objective outline on the Project Page.
+  // Expand the list when the load capacity is at 75%.
+  expandList() {
+    let tmpStore = this.search("entries");
+    // expand capacity first (by doubling it), load factor remains the same
+    this.capacity *= 2;
+    this.list = Array.from({ length: this.capacity }, (_, i) => i).map(
+      () => new LinkedList(),
+    );
+    this.keyCount = 0; // reset the keyCount;
+    tmpStore.forEach((x) => this.set(x[0], x[1]));
+  }
 
   /**
    * The definition for capacity here is the amount of 'bucket' with
