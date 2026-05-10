@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /* main.js */
 import { HashMap } from "./hash_map.js";
 
@@ -45,3 +46,22 @@ console.log("'dog' has the value of: " + hashmap.get("dog"));
 // Do not add 'kite' to the hashmap just yet
 console.log("'kite' has the value of: " + hashmap.get("kite"));
 console.log("The key count in the hash map is now: " + hashmap.length());
+hashmap.set("apple", "yellow");
+console.log("'apple' has the value of: " + hashmap.get("apple"));
+console.log("The key count in the hash map is now: " + hashmap.length());
+hashmap.set("apple", "red");
+console.log("'apple' has the value of: " + hashmap.get("apple"));
+console.log("The key count in the hash map is now: " + hashmap.length());
+
+console.dir(hashmap.returnList());
+
+console.dir(hashmap.keys());
+console.dir(hashmap.values());
+console.dir(hashmap.entries());
+let item = "apple";
+console.log(`Removal of ${item}: ` + hashmap.remove(item));
+console.dir(hashmap.entries());
+hashmap.set("apple", "new value");
+console.dir(hashmap.entries());
+hashmap.set("apple", "old value");
+console.dir(hashmap.entries());
