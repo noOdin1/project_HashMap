@@ -286,4 +286,8 @@ describe("Hash Map test: 2 item on the list", () => {
     // console.log("The current capacity is: " + hashmap.currentCapacity());
     expect(hashmap.length()).toEqual(14);
     expect(hashmap.currentCapacity()).toEqual(0.75);
+    hashmap.set("plane", "white");
+    // console.log("The current capacity is: " + hashmap.currentCapacity());
+    expect(hashmap.length()).toEqual(15);
+    expect(hashmap.currentCapacity()).toEqual(15 / 32);
 });
