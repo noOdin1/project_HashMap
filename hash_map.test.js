@@ -282,4 +282,8 @@ describe("Hash Map test: 2 item on the list", () => {
     hashmap.set("lion", "golden");
     hashmap.set("phone", "black");
     hashmap.set("coffee", "white");
+    // After adding the above key, the list is now at capacity 75%.
+    // console.log("The current capacity is: " + hashmap.currentCapacity());
+    expect(hashmap.length()).toEqual(14);
+    expect(hashmap.currentCapacity()).toEqual(0.75);
 });
