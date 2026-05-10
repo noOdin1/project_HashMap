@@ -293,4 +293,5 @@ describe("Hash Map test: 2 item on the list", () => {
     hashmap.set("moon", "silver");
     expect(hashmap.length()).toEqual(16);
     expect(hashmap.currentCapacity()).toEqual(16 / 32);
+  });
 });
