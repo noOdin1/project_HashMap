@@ -4,7 +4,7 @@ import { HashMap } from "./hash_map.js";
 describe("Hash Map test: 0 item on the list", () => {
   let hashmap;
   beforeEach(() => {
-    // before each test, reset tmpList to a new empty Linked List
+    // before each test, reset tmpList to a new empty Hash Map
     hashmap = new HashMap();
   });
 
@@ -60,7 +60,7 @@ describe("Hash Map test: 0 item on the list", () => {
 describe("Hash Map test: 1 item on the list", () => {
   let hashmap;
   beforeEach(() => {
-    // before each test, reset tmpList to a new empty Linked List
+    // before each test, reset tmpList to a new empty Hash Map
     hashmap = new HashMap();
     hashmap.set("apple", "red");
   });
@@ -152,7 +152,7 @@ describe("Hash Map test: 1 item on the list", () => {
 describe("Hash Map test: 2 item on the list", () => {
   let hashmap;
   beforeEach(() => {
-    // before each test, reset tmpList to a new empty Linked List
+    // before each test, reset tmpList to a new empty Hash Map
     hashmap = new HashMap();
     hashmap.set("apple", "red");
     hashmap.set("banana", "yellow");
@@ -265,6 +265,16 @@ describe("Hash Map test: 2 item on the list", () => {
       ["apple", "red"],
       ["banana", "yellow"],
     ]);
+  });
+});
+
+describe("Test specifically to determine if Hash Map can expand dynamically", () => {
+  let hashmap;
+  beforeEach(() => {
+    // before each test, reset tmpList to a new empty Hash Map
+    hashmap = new HashMap();
+    hashmap.set("apple", "red");
+    hashmap.set("banana", "yellow");
   });
 
   test("Test to see if Hash Map will expand when load capacity exceeds 0.75", () => {
