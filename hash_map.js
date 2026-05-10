@@ -31,7 +31,7 @@ class HashMap {
    * The definition for capacity here is the amount of 'bucket' with
    * at least 1 item over overall number of 'bucket'.
    */
-  testCapacity() {
+  currentCapacity() {
     let count = 0;
     this.list.forEach((x) => (x.size() == 0 ? 0 : count++));
     return count / this.capacity;
