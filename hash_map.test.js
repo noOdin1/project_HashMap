@@ -163,6 +163,14 @@ describe("Hash Map test: 2 item on the list", () => {
     expect(hashmap.hash("dummy key")).toBeGreaterThanOrEqual(0);
     expect(hashmap.hash("dummy key")).toBeLessThan(16);
   });
+  test("Test expandList() with 2 item on the list", () => {
+    // Hash key must be between 0 and 15
+    expect(hashmap.length()).toEqual(2);
+    expect(hashmap.currentCapacity()).toEqual(0.125);
+    hashmap.expandList();
+    expect(hashmap.length()).toEqual(2);
+    expect(hashmap.currentCapacity()).toEqual(0.0625);
+  });
   test("Test currentCapacity() with 2 item on the list", () => {
     expect(hashmap.currentCapacity()).toEqual(0.125);
   });
