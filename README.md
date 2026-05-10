@@ -24,7 +24,8 @@ This project will implement another common data structure, Hash Map.<br>
 <h3>Hash Map Design</h3>
 The objectives outline by TOP will determine what are the Hash Map's main functions.<br> 
 Aside from these functions by TOP, I have decided to add the following:<br>
-1. Each 'bucket' in the Hash Map points to a Linked List, from previous [link list](https://github.com/noOdin1/project_linked_list) project<br> 
+1. Each 'bucket' in the Hash Map points to a Linked List, from previous <a href="https://github.com/noOdin1/project_linked_list">linked list</a> project.<br>
 2. Slight modification to Linked List, extra functions to accomodate for current project demand:<br>
 &emsp;&emsp;a. valueAt(index), returns the value pointed to by the index<br>
 &emsp;&emsp;b. changeValueAt(index, value), changes the value of the node pointed to by index<br>
+[Build data and AI skills with DataCamp](https://www.datacamp.com)
