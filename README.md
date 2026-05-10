@@ -26,7 +26,7 @@ The objectives outline by TOP will determine what are the Hash Map's main functi
 The project expects collision to occur but it does not explain how to handle these collision.<br>
 After researching this topic on the internet, the following are some of the strategies used to<br>
 resolve collisions:<br>
-1. Open Hashing<br>
+1. Separate Chaining (Closed Addressing)<br>
 &emsp;&emsp;a. Linked List chaining<br> 
 &emsp;&emsp;&emsp;When a collision occurs, the new key-value pair is simply appended to the list<br>
 &emsp;&emsp;&emsp;at the corresponding index.<br>
@@ -35,7 +35,7 @@ resolve collisions:<br>
 &emsp;&emsp;&emsp;collisions, some implementations (like Java 8+ HashMap) use balanced<br>
 &emsp;&emsp;&emsp;red-black trees instead of linked lists when a bucket's entry count exceeds<br>
 &emsp;&emsp;&emsp;a certain threshold.<br>
-2. Closed Hashing, <a href="https://www.youtube.com/watch?v=mFY0J5W8Udk">for some explanation on this matter</a><br>
+2. Open Addressing, <a href="https://www.youtube.com/watch?v=mFY0J5W8Udk">for some explanation on this matter</a><br>
 &emsp;&emsp;a. Linear Probing<br> 
 &emsp;&emsp;&emsp;This involves sequentially searching for the next empty slot (i+1, i+2,...).<br>
 &emsp;&emsp;b. Quadratic Probing<br>
