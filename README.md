@@ -23,8 +23,32 @@ This project will implement another common data structure, Hash Map.<br>
 
 <h3>Hash Map Design</h3>
 The objectives outline by TOP will determine what are the Hash Map's main functions.<br> 
+The project expects collision to occur but it does not explain how to handle these collision.<br>
+After researching this topic on the internet, the following are some of the strategies used to<br>
+resolve collisions:<br>
+1. Open Hashing<br>
+&emsp;&emsp;a. Linked List chaining<br> 
+&emsp;&emsp;&emsp;When a collision occurs, the new key-value pair is simply appended to the list<br>
+&emsp;&emsp;&emsp;at the corresponding index.<br>
+&emsp;&emsp;b. Tree Based chaining<br> 
+&emsp;&emsp;&emsp;To improve performance from O(N) to O(log N) in the case of many<br>
+&emsp;&emsp;&emsp;collisions, some implementations (like Java 8+ HashMap) use balanced<br>
+&emsp;&emsp;&emsp;red-black trees instead of linked lists when a bucket's entry count exceeds<br>
+&emsp;&emsp;&emsp;a certain threshold.<br>
+2. Closed Hashing, <a href="https://www.youtube.com/watch?v=mFY0J5W8Udk">for some explanation on this matter</a><br>
+&emsp;&emsp;a. Linear Probing<br> 
+&emsp;&emsp;&emsp;This involves sequentially searching for the next empty slot (i+1, i+2,...).<br>
+&emsp;&emsp;b. Quadratic Probing<br>
+&emsp;&emsp;&emsp;Uses a quadratic formula (i + 1^2, i + 2^2,...) to probe, reducing clustering.<br>
+&emsp;&emsp;c. Double Hashing<br>
+&emsp;&emsp;&emsp;Employs a second hash function for probe intervals, reducing clustering further.<br>
+3. Dynamic Resizing<br>
+&emsp;To maintain O(1) performance, the table increases its capacity and rehashes existing<br>
+&emsp;elements when the load factor becomes too high.<br>
+<hr>
 Aside from these functions by TOP, I have decided to add the following:<br>
 1. Each 'bucket' in the Hash Map points to a Linked List, from previous <a href="https://github.com/noOdin1/project_linked_list">linked list</a> project.<br>
+&emsp;Open hashing technique.<br>
 2. Slight modification to Linked List, extra functions to accomodate for current project demand:<br>
 &emsp;&emsp;a. valueAt(index), returns the value pointed to by the index<br>
 &emsp;&emsp;b. changeValueAt(index, value), changes the value of the node pointed to by index<br>
