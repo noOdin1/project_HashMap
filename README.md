@@ -21,7 +21,7 @@ This project will implement another common data structure, Hash Map.<br>
 | 11. function values() returns an array with all the values<br>&emsp;&ensp;on the hash map.                                    | [done] :white_check_mark: |
 | 12. function entries() returns an array with all the<br>&emsp;&ensp;[key, values] pair on the hash map.                       | [done] :white_check_mark: |
 
-<h3>Hash Map Design</h3>
+<h3>Hash Map Research</h3>
 The objectives outline by TOP will determine what are the Hash Map's main functions.<br> 
 The project expects collision to occur but it does not explain how to handle these collision.<br>
 After researching this topic on the internet, the following are some of the strategies used to<br>
@@ -45,10 +45,29 @@ resolve collisions:<br>
 3. Dynamic Resizing<br>
 &emsp;To maintain O(1) performance, the table increases its capacity and rehashes existing<br>
 &emsp;elements when the load factor becomes too high.<br>
+For this project I've decided to use Open Hashing approach, Linked List from previous project.<br>
+Each [key, value] pair inserted in the map will occupy a space on the bucket. Each bucket is a<br>
+Linked List Object. I have decided that this will be the criteria for my project because<br> 
+it is mentioned that the project needs to handle collision. The items with collision will still<br>
+be stored and the map has the ability to update the value if it is found with the same key but<br>
+different value. One of the project requirement is to expand the Hash Map when it has reached a<br>
+capacity or load of 0.75.<br> 
 <hr>
+<h3>Hash Map Design</h3>
 Aside from these functions by TOP, I have decided to add the following:<br>
 1. Each 'bucket' in the Hash Map points to a Linked List, from previous <a href="https://github.com/noOdin1/project_linked_list">linked list</a> project.<br>
 &emsp;Open hashing technique.<br>
 2. Slight modification to Linked List, extra functions to accomodate for current project demand:<br>
 &emsp;&emsp;a. valueAt(index), returns the value pointed to by the index<br>
 &emsp;&emsp;b. changeValueAt(index, value), changes the value of the node pointed to by index<br>
+<hr>
+<h3>Testing the Hash Map</h3>
+
+| Test Suite                                                                                  |                 status                 |
+| ------------------------------------------------------------------------------------------- | :------------------------------------: |
+| 1. Test all the methods/functions in HashMap class with empty list.<br>                     |       [done] :white_check_mark:        |
+| 2. Test all the methods/functions in HashMap class with list containing 1 item only.<br>    |       [done] :white_check_mark:        |
+| 3. Test all the methods/functions in HashMap class with list containing 2 item only.<br>    |       [done] :white_check_mark:        |
+| 4. Test conditions where HashMap reached capacity and expand to accomodate new items.<br>   |       [done] :white_check_mark:        |
+
+
