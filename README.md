@@ -28,4 +28,3 @@ Aside from these functions by TOP, I have decided to add the following:<br>
 2. Slight modification to Linked List, extra functions to accomodate for current project demand:<br>
 &emsp;&emsp;a. valueAt(index), returns the value pointed to by the index<br>
 &emsp;&emsp;b. changeValueAt(index, value), changes the value of the node pointed to by index<br>
-[Build data and AI skills with DataCamp](https://www.datacamp.com)
