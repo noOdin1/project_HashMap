@@ -45,6 +45,7 @@ resolve collisions:<br>
 3. Dynamic Resizing<br>
 &emsp;To maintain O(1) performance, the table increases its capacity and rehashes existing<br>
 &emsp;elements when the load factor becomes too high.<br>
+<br>
 For this project I've decided to use Open Hashing approach, Linked List from previous project.<br>
 Each [key, value] pair inserted in the map will occupy a space on the bucket. Each bucket is a<br>
 Linked List Object. I have decided that this will be the criteria for my project because<br> 
@@ -54,6 +55,12 @@ different value. One of the project requirement is to expand the Hash Map when i
 capacity or load of 0.75.<br> 
 <hr>
 <h3>Hash Map Design</h3>
+One of the project requirements is to have the Hashmap expand when it has reached a load capacity<br>
+of 75%. I take this to mean that when the Hashmap is empty, the load factor is 0% and when all the<br>
+buckets are filled, whether there's only one entry or multiple entries that would be 100% filled.<br>
+Therefore at 75% filled means that there's 75 buckets out of 100 buckets filled, then the hashmap<br>
+would expand. The expansion would be double the size of the current hashmap, i.e.: if current<br>
+hashmap is of size 100, then the expanded version would be of 200 buckets.<br>
 Aside from these functions by TOP, I have decided to add the following:<br>
 1. Each 'bucket' in the Hash Map points to a Linked List, from previous <a href="https://github.com/noOdin1/project_linked_list">linked list</a> project.<br>
 &emsp;Open hashing technique.<br>
