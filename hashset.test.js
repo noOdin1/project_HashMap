@@ -1,59 +1,53 @@
 /* hashset.test.js */
 import { HashSet } from "./hashset.js";
 
-describe("Hash Map test: 0 item on the list", () => {
-  let hashmap;
+describe("HashSet test: 0 item on the list", () => {
+  let hashset;
   beforeEach(() => {
-    // before each test, reset tmpList to a new empty Hash Map
-    hashmap = new HashMap();
+    // before each test, reset tmpList to a new empty Hash Set
+    hashset = new HashSet();
   });
 
   test("Test hash() with empty list", () => {
     // Hash key must be between 0 and 15
-    expect(hashmap.hash("dummy key")).toBeGreaterThanOrEqual(0);
-    expect(hashmap.hash("dummy key")).toBeLessThan(16);
+    expect(hashset.hash("dummy key")).toBeGreaterThanOrEqual(0);
+    expect(hashset.hash("dummy key")).toBeLessThan(16);
   });
   test("Test currentCapacity() with empty list", () => {
-    expect(hashmap.currentCapacity()).toEqual(0);
+    expect(hashset.currentCapacity()).toEqual(0);
   });
   test("Test set() with empty list", () => {
     // After value insertion check if it's present on the list
-    hashmap.set("pineapple", "yellow");
-    expect(hashmap.entries()).toEqual([["pineapple", "yellow"]]);
+    hashset.set("pineapple");
+    expect(hashset.entries()).toEqual([["pineapple"]]);
   });
-  test("Test length() when hash map is empty", () => {
-    expect(hashmap.length()).toEqual(0);
+  test("Test length() when hash set is empty", () => {
+    expect(hashset.length()).toEqual(0);
   });
-  test("Test has() when hash map is empty", () => {
-    expect(hashmap.has("dog")).toEqual(false);
+  test("Test has() when hash set is empty", () => {
+    expect(hashset.has("dog")).toEqual(false);
   });
-  test("Test get() when hash map is empty", () => {
-    expect(hashmap.get("dog")).toEqual(null);
+  test("Test get() when hash set is empty", () => {
+    expect(hashset.get("dog")).toEqual(null);
   });
-  test("Test remove() when hash map is empty", () => {
-    expect(hashmap.remove("dog")).toEqual(false);
+  test("Test remove() when hash set is empty", () => {
+    expect(hashset.remove("dog")).toEqual(false);
   });
-  test("Test clear() when hash map is empty", () => {
-    hashmap.clear();
-    expect(hashmap.entries()).toEqual([]);
+  test("Test clear() when hash set is empty", () => {
+    hashset.clear();
+    expect(hashset.entries()).toEqual([]);
   });
-  test("Test search('keys') when hash map is empty", () => {
-    expect(hashmap.search("keys")).toEqual([]);
+  test("Test search('keys') when hash set is empty", () => {
+    expect(hashset.search("keys")).toEqual([]);
   });
-  test("Test search('values') when hash map is empty", () => {
-    expect(hashmap.search("values")).toEqual([]);
+  test("Test search('entries') when hash set is empty", () => {
+    expect(hashset.search("entries")).toEqual([]);
   });
-  test("Test search('entries') when hash map is empty", () => {
-    expect(hashmap.search("entries")).toEqual([]);
+  test("Test keys() when hash set is empty", () => {
+    expect(hashset.keys()).toEqual([]);
   });
-  test("Test keys() when hash map is empty", () => {
-    expect(hashmap.keys()).toEqual([]);
-  });
-  test("Test values() when hash map is empty", () => {
-    expect(hashmap.values()).toEqual([]);
-  });
-  test("Test entries() when hash map is empty", () => {
-    expect(hashmap.entries()).toEqual([]);
+  test("Test entries() when hash set is empty", () => {
+    expect(hashset.entries()).toEqual([]);
   });
 });
 
