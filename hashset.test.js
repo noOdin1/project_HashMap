@@ -154,8 +154,8 @@ describe("Hash Map test: 2 item on the list", () => {
   beforeEach(() => {
     // before each test, reset tmpList to a new empty Hash Map
     hashmap = new HashMap();
-    hashmap.set("apple", "red");
-    hashmap.set("banana", "yellow");
+    hashmap.set("apple");
+    hashmap.set("banana");
   });
 
   test("Test hash() with 2 item on the list", () => {
@@ -176,24 +176,16 @@ describe("Hash Map test: 2 item on the list", () => {
   });
   test("Test set() with 2 item on the list, adding 1 new item", () => {
     // After value insertion check if it's present on the list
-    hashmap.set("pineapple", "yellow");
-    expect(hashmap.entries()).toEqual([
-      ["apple", "red"],
-      ["pineapple", "yellow"],
-      ["banana", "yellow"],
-    ]);
+    hashmap.set("pineapple");
+    expect(hashmap.entries()).toEqual([["apple"], ["pineapple"], ["banana"]]);
     expect(hashmap.length()).toEqual(3);
   });
   // simulate a collision, 'apple' and 'dog' has the same
   // hash output '2'
   test("Test set() with 2 item on the list, adding 1 new item, collision test", () => {
     // After value insertion check if it's present on the list
-    hashmap.set("dog", "brown");
-    expect(hashmap.entries()).toEqual([
-      ["apple", "red"],
-      ["dog", "brown"],
-      ["banana", "yellow"],
-    ]);
+    hashmap.set("dog");
+    expect(hashmap.entries()).toEqual([["apple"], ["dog"], ["banana"]]);
     expect(hashmap.length()).toEqual(3);
     // value of 0.0625 represent 1 bucket with data
     // This value is a measurement of buckets with data / overall buckets
